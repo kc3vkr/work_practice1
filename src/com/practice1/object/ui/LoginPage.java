@@ -28,6 +28,10 @@ public class LoginPage {
 		return driver.findElement(By.id("loginButton"));
 	}
 	
+	public WebElement getLoginErrMsg() {
+		return driver.findElement(By.xpath("//span[contains(text(), 'Username or Password is invalid.')]"));
+	}
+	
 	public void waitForLoginPageToLoad() {
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.id("loginFormContainer"))));
